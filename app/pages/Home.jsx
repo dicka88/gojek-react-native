@@ -66,8 +66,9 @@ export default class Home extends Component {
 				</View>
 
 				{/*body content*/}
-				<View style={{flex: 1, paddingHorizontal: 20, paddingTop: 5}}>
-					<ScrollView>
+				<ScrollView>
+					<View style={{flex: 1, paddingHorizontal: 20, paddingTop: 5}}>
+						{/*gopay*/}
 						<View>
 							<View style={{ 
 								height: 40, 
@@ -78,18 +79,77 @@ export default class Home extends Component {
 								backgroundColor: '#2F63BC',
 								paddingHorizontal: 10,
 							}}>
-								<Image source={require('../src/icon/gopay.png')} />
-								<Text style={{ color: 'white', fontWeight: 'bold' }}>Rp50.000</Text>
+								<Image style={{ aspectRatio: 6 }} source={require('../src/icon/gopay.png')} />
+								<Text style={{ color: 'white', fontWeight: 'bold' }}>Rp23.706.600</Text>
 							</View>
 							<View style={{ 
 								height: 90, 
 								borderBottomLeftRadius: 5, 
 								borderBottomRightRadius: 5, 
-								backgroundColor: '#2A5DB4' }}>
+								backgroundColor: '#2A5DB4',
+								flexDirection: 'row',
+								alignItems: 'center'
+							}}>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/pay.png')} />
+									<Text style={{color: 'white'}}>Pay</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/nearby.png')} />
+									<Text style={{color: 'white'}}>Nearby</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/topup.png')} />
+									<Text style={{color: 'white'}}>Topup</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/more.png')} />
+									<Text style={{color: 'white'}}>More</Text>
+								</View>
 							</View>
 						</View>
-					</ScrollView>
-				</View>
+
+						{/*services*/}
+						<View style={{ backgroundColor: 'white', borderRadius: 5, paddingVertical: 20, marginVertical: 15 }}>
+							<View style={{ flexDirection: 'row', marginBottom: 20}}>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-ride.png')} />
+									<Text style={{color: 'black'}}>GoRide</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-car.png')} />
+									<Text style={{color: 'black'}}>GoCar</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-food.png')} />
+									<Text style={{color: 'black'}}>GoFood</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-bluebird.png')} />
+									<Text style={{color: 'black'}}>GoBlueBird</Text>
+								</View>
+							</View>
+							<View style={{ flexDirection: 'row', }}>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-send.png')} />
+									<Text style={{color: 'black'}}>GoRide</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-pulsa.png')} />
+									<Text style={{color: 'black'}}>GoPulsa</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-deals.png')} />
+									<Text style={{color: 'black'}}>GoDeals</Text>
+								</View>
+								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+									<Image source={require('../src/icon/go-more.png')} />
+									<Text style={{color: 'black'}}>More...</Text>
+								</View>
+							</View>
+						</View>
+					</View>
+				</ScrollView>
 
 				{/*bottom bar*/}
 				<View style={{height: 65, flexDirection: 'row', borderTopWidth: 0.7, borderTopColor: '#e8e8e8', backgroundColor: '#fff'}}>
