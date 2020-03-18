@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'reactn' do
-  # Pods for reactn
+target 'Gojek' do
+  # Pods for Gojek
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -37,7 +37,7 @@ target 'reactn' do
 
 
 
-  target 'reactnTests' do
+  target 'GojekTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -45,10 +45,10 @@ target 'reactn' do
   use_native_modules!
 end
 
-target 'reactn-tvOS' do
-  # Pods for reactn-tvOS
+target 'Gojek-tvOS' do
+  # Pods for Gojek-tvOS
 
-  target 'reactn-tvOSTests' do
+  target 'Gojek-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

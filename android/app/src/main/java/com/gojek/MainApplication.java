@@ -1,4 +1,4 @@
-package com.reactn;
+package com.gojek;
 
 import android.app.Application;
 import android.content.Context;
