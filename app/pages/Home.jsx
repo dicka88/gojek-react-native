@@ -132,7 +132,7 @@ export default class Home extends Component {
 							<View style={{ flexDirection: 'row', }}>
 								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
 									<Image source={require('../src/icon/go-send.png')} />
-									<Text style={{color: 'black'}}>GoRide</Text>
+									<Text style={{color: 'black'}}>GoSend</Text>
 								</View>
 								<View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
 									<Image source={require('../src/icon/go-pulsa.png')} />
