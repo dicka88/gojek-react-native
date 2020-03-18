@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
     <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="signin" component={Login} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image } from 'react-native'
+import { View, Image, StatusBar } from 'react-native'
 
 const icon = {
     gojek: require('../src/icon/gojek-icon.png')

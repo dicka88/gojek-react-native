@@ -14,7 +14,7 @@ export default function Gopay() {
                 paddingHorizontal: 10,
             }}>
                 <Image style={{ aspectRatio: 6 }} source={require('../../src/icon/gopay.png')} />
-                <Text style={{ color: 'white', fontWeight: 'bold' }}>Rp23.706.600</Text>
+                <Text style={{ fontFamily: 'OpenSans-Bold' ,color: 'white', fontWeight: 'bold' }}>Rp23.706.600</Text>
             </View>
             <View style={{ 
                 height: 90, 
@@ -26,19 +26,19 @@ export default function Gopay() {
             }}>
                 <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
                     <Image source={require('../../src/icon/pay.png')} />
-                    <Text style={{color: 'white'}}>Pay</Text>
+                    <Text style={{color: 'white', fontFamily: 'OpenSans-Regular'}}>Pay</Text>
                 </View>
                 <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
                     <Image source={require('../../src/icon/nearby.png')} />
-                    <Text style={{color: 'white'}}>Nearby</Text>
+                    <Text style={{color: 'white', fontFamily: 'OpenSans-Regular'}}>Nearby</Text>
                 </View>
                 <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
                     <Image source={require('../../src/icon/topup.png')} />
-                    <Text style={{color: 'white'}}>Topup</Text>
+                    <Text style={{color: 'white', fontFamily: 'OpenSans-Regular'}}>Topup</Text>
                 </View>
                 <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
                     <Image source={require('../../src/icon/more.png')} />
-                    <Text style={{color: 'white'}}>More</Text>
+                    <Text style={{color: 'white', fontFamily: 'OpenSans-Regular'}}>More</Text>
                 </View>
             </View>
         </View>
