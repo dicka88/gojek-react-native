@@ -15,7 +15,7 @@ export default class Home extends Component {
 
 				{/*body content*/}
 				<ScrollView>
-					<View style={{flex: 1, paddingHorizontal: 20, paddingTop: 5}}>
+					<View style={{flex: 1, paddingHorizontal: 15, paddingTop: 5}}>
 						{/*gopay*/}
 						<Gopay />
 
