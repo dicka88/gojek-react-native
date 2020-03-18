@@ -60,7 +60,7 @@ export default class Home extends Component {
 								</ScrollView>
 							</View>
 							<View style={{ marginTop: 4, padding: 6 }}>
-								<Image source={require('../src/logo/gojek.png')} />
+								<Image source={require('../../assets/logo/gojek.png')} />
 								<View>
 									<View style={{ marginTop: 5 }}>
 										<Text style={{ fontWeight: 'bold' }}>Here are your must-knows about COVID-19</Text>
@@ -71,12 +71,11 @@ export default class Home extends Component {
 										</Text>
 									</View>
 									<View style={{ flexDirection: 'row', marginVertical: 10 }}>
-											{/* <Image style={{ width: '90%', borderRadius: 8, height: 210 }} resizeMode='stretch' source={require('../src/dummy/go-food-kfc.jpg')} /> */}
 										<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-											<Image style={{ borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../src/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../src/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../src/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../src/dummy/go-food-kfc.jpg')} />
+											<Image style={{ borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
+											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
+											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
+											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
 										</ScrollView>
 									</View>
 								</View>

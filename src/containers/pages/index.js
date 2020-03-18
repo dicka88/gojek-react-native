@@ -1,7 +1,7 @@
-import Login from './app/pages/Login'
-import Signup from './app/pages/Signup'
-import Home from './app/pages/Home'
-import Splash from './app/pages/Splash'
+import Login from './Login'
+import Signup from './Signup'
+import Home from './Home'
+import Splash from './Splash'
 
 export default {
     Splash,

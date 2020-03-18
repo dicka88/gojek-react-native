@@ -1,7 +1,7 @@
-import Gopay from '../component/Gopay'
-import Topbar from '../component/Topbar'
-import Services from '../component/Services'
-import Navigation from '../component/Navigation'
+import Gopay from './Gopay'
+import Topbar from './Topbar'
+import Services from './Services'
+import Navigation from './Navigation'
 
 export default {
     Gopay,
