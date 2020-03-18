@@ -21,7 +21,7 @@ export default class Splash extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Image style={{ width: 170, height: 220 }} source={icon.gojek} />
+                <Image style={{ width: 170, height: 235 }} source={icon.gojek} />
             </View>
         ) 
     }
