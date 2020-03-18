@@ -2,16 +2,16 @@ import React from 'react'
 import { View, Image, Text } from 'react-native'
 
 const icon = {
-    account: require('../../src/icon/account.png'),
-    accoutActive: require('../../src/icon/account-active.png'),
-    help: require('../../src/icon/help.png'),
-    helpActive: require('../../src/icon/help-active.png'),
-    home: require('../../src/icon/home.png'),
-    homeActive: require('../../src/icon/home-active.png'),
-    inbox: require('../../src/icon/inbox.png'),
-    inboxActive: require('../../src/icon/inbox-active.png'),
-    order: require('../../src/icon/order.png'),
-    orderActive: require('../../src/icon/order-active.png'),
+    account: require('../../assets/icon/account.png'),
+    accoutActive: require('../../assets/icon/account-active.png'),
+    help: require('../../assets/icon/help.png'),
+    helpActive: require('../../assets/icon/help-active.png'),
+    home: require('../../assets/icon/home.png'),
+    homeActive: require('../../assets/icon/home-active.png'),
+    inbox: require('../../assets/icon/inbox.png'),
+    inboxActive: require('../../assets/icon/inbox-active.png'),
+    order: require('../../assets/icon/order.png'),
+    orderActive: require('../../assets/icon/order-active.png'),
 }
 
 const ItemNav = ({src, srcActive, active, title}) => {

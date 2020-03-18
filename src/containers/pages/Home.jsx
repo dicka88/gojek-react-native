@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, TextInput, StyleSheet, StatusBar } from 'react-native'
+import { 
+	View, 
+	Text, 
+	ScrollView, 
+	Image, 
+	TextInput, 
+	StyleSheet, 
+	StatusBar
+ } from 'react-native'
 
-import Gopay from './component/Gopay'
-import Topbar from './component/Topbar'
-import Services from './component/Services'
-import Navigation from './component/Navigation'
+import { 
+	Gopay,
+    Topbar,
+    Services,
+	Navigation 
+} from '../component'
 
 export default class Home extends Component {
 	render() {
