@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     container: { 
         backgroundColor: 'white', 
         height: 45,
-        flex: 1, 
         flexDirection: 'row', 
         justifyContent: 'space-between',
         paddingHorizontal: 20, 
@@ -39,7 +38,8 @@ const styles = StyleSheet.create({
         borderColor: 'grey',
         width: 300,
         alignItems: 'center',
-        paddingHorizontal: 10
+        paddingLeft: 10,
+        paddingRight: 30
     },
     promoContainer: {
         flexDirection: 'row', 

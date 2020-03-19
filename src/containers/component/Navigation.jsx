@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Image, Text } from 'react-native'
+import React, { Component } from 'react'
+import { View, Image, Text, TouchableOpacity } from 'react-native'
 
 const icon = {
     account: require('../../assets/icon/account.png'),
@@ -14,23 +14,25 @@ const icon = {
     orderActive: require('../../assets/icon/order-active.png'),
 }
 
-const ItemNav = ({src, srcActive, active, title}) => {
+const ItemNav = ({src, srcActive, active, title, onPress}) => {
     return (
-        <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
-            <Image source={active ? srcActive : src} />
+        <TouchableOpacity onPress={ onPress } style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+            <Image onPress={() => alert("helll")} source={active ? srcActive : src} />
             <Text style={{color: active ? 'green' : 'grey'}}>{title}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 
-export default function Navigation() {
-    return (
-        <View style={{height: 65, flexDirection: 'row', borderTopWidth: 0.7, borderTopColor: '#e8e8e8', backgroundColor: '#fff'}}>
-            <ItemNav src={icon.home} srcActive={icon.homeActive} active={true} title="Home" />
-            <ItemNav src={icon.order} srcActive={icon.orderActive} active={false} title="Order" />
-            <ItemNav src={icon.help} srcActive={icon.helpActive} active={false} title="Help" />
-            <ItemNav src={icon.inbox} srcActive={icon.inboxActive} active={false} title="Inbox" />
-            <ItemNav src={icon.account} srcActive={icon.accountActive} active={false} title="Account" />
-        </View>
-    )
+export default class Navigation extends Component {
+    render() { 
+        return (
+            <View style={{height: 65, flexDirection: 'row', borderTopWidth: 0.7, borderTopColor: '#e8e8e8', backgroundColor: '#fff'}}>
+                <ItemNav onPress={ () => this.props.navigation.navigate('Login') } src={icon.home} srcActive={icon.homeActive} active={true} title="Home" />
+                <ItemNav src={icon.order} srcActive={icon.orderActive} active={false} title="Order" />
+                <ItemNav src={icon.help} srcActive={icon.helpActive} active={false} title="Help" />
+                <ItemNav src={icon.inbox} srcActive={icon.inboxActive} active={false} title="Inbox" />
+                <ItemNav src={icon.account} srcActive={icon.accountActive} active={false} title="Account" />
+            </View>
+         )
+    }
 }

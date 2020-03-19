@@ -7,22 +7,80 @@ import {
 	StyleSheet, 
  } from 'react-native'
 
-import { 
-	Gopay,
-    Topbar,
-    Services,
-	Navigation 
-} from '../component'
+import component from '../component'
+const { Gopay, Navigation, Services, Topbar } = component
 
 export default class Home extends Component {
+	constructor(props) {
+		super(props)
+	}
+
 	render() {
+
+		const content =  {
+			length: [{
+				title: 'Here are your must-knows about COVID-19',
+				information: 'Here are some information & tips on simple actions to minimize the risks of Coronavirus',
+				subMenu: [
+					{
+						images: require('../../assets/dummy/go-food-kfc.jpg')
+					},
+					{
+						images: require('../../assets/dummy/go-food-kfc.jpg'),
+					},
+					{
+						images: require('../../assets/logo/gojek.png'),
+					}
+				]
+			},
+			{
+				title: 'International WHO annoncuement about coronavirus',
+				information: '2020/03/20 here WHO declare ',
+				subMenu: [
+					{
+						images: require('../../assets/dummy/go-food-kfc.jpg')
+					}
+				]
+			}
+		]
+		}
+
+		let contentData = []
+
+		content.length.map( e => {
+			contentData.push(
+				<View style={{ marginTop: 4, padding: 6 }}>
+					<Image source={require('../../assets/logo/gojek.png')} />
+					<View>
+						<View style={{ marginTop: 5 }}>
+							<Text style={{ fontWeight: 'bold' }}>{ e.title }</Text>
+						</View>
+						<View>
+							<Text style={{ color: 'grey' }}>
+								{ e.information }
+							</Text>
+						</View>
+						<View style={{ flexDirection: 'row', marginVertical: 10 }}>
+							<ScrollView horizontal showsHorizontalScrollIndicator={false}>
+								{
+									e.subMenu.map(item => {
+										return <Image style={{ marginRight: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={item.images} />
+									})
+								}	
+							</ScrollView>
+						</View>
+					</View>
+				</View>
+			)
+		})
+
 		return (
 			<View style={{flex: 1}}>
 				{/*top bar*/}
 				<Topbar />
 
 				{/*body content*/}
-				<ScrollView>
+				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={{flex: 1, paddingHorizontal: 15, paddingTop: 5}}>
 						{/*gopay*/}
 						<Gopay />
@@ -31,7 +89,7 @@ export default class Home extends Component {
 						<Services />
 
 						{/* Topics */}
-						<View style={{ backgroundColor: '#fff', borderTopRightRadius: 5, borderTopLeftRadius: 5 }}>
+						<View style={{ backgroundColor: '#fff', paddingHorizontal: 10, paddingVertical: 15, borderTopRightRadius: 5, borderTopLeftRadius: 5 }}>
 							<View>
 								<Text style={{ fontWeight: 'bold', fontSize: 23 }}>Top picks for you</Text>
 							</View>
@@ -57,27 +115,7 @@ export default class Home extends Component {
 									</View>
 								</ScrollView>
 							</View>
-							<View style={{ marginTop: 4, padding: 6 }}>
-								<Image source={require('../../assets/logo/gojek.png')} />
-								<View>
-									<View style={{ marginTop: 5 }}>
-										<Text style={{ fontWeight: 'bold' }}>Here are your must-knows about COVID-19</Text>
-									</View>
-									<View>
-										<Text style={{ color: 'grey' }}>
-											Here are some information & tips on simple actions to minimize the risks of Coronavirus
-										</Text>
-									</View>
-									<View style={{ flexDirection: 'row', marginVertical: 10 }}>
-										<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-											<Image style={{ borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
-											<Image style={{ marginLeft: 10, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={require('../../assets/dummy/go-food-kfc.jpg')} />
-										</ScrollView>
-									</View>
-								</View>
-							</View>
+							{ contentData }
 						</View>
 
 					</View>

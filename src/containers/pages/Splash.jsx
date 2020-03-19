@@ -12,15 +12,15 @@ export default class Splash extends Component {
     
     async componentDidMount() {
         const data = await this.performTimeConsumingTask();
-
+        
         if (data !== null) {
-            this.props.navigation.navigate('home');
+            this.props.navigation.navigate('Home');
         }
     }
 
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ flex: 1, backgroundColor: '#fff' , alignItems: 'center', justifyContent: 'center' }}>
                 <Image style={{ width: 170, height: 235 }} source={icon.gojek} />
             </View>
         ) 
