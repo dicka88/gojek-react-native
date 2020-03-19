@@ -59,7 +59,10 @@ const TabsScreen = createBottomTabNavigator({
     animationEnabled: true,
     tabBarOptions: {
         activeTintColor: 'green',
-        inactiveTintColor: 'grey'
+        inactiveTintColor: 'grey',
+        style: {
+            height: 60
+        }
     }
 })
 
