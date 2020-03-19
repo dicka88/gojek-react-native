@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image } from 'react-native'
 
-export default class Account extends Component {
+export default class Help extends Component {
     constructor(props) {
         super(props)
     }
@@ -19,14 +19,14 @@ export default class Account extends Component {
                     paddingHorizontal: 20
                 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
-                        Account
+                        Help
                     </Text>
                     {/* <Image /> */}
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     {/* <Image source={} /> */}
                     <View style={{ alignItems: 'center' }}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 18}} >Soon :)</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 18}} >No tips or help for you</Text>
                         <Text>Take care to this.</Text>
                     </View>
                 </View>

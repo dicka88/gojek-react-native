@@ -125,7 +125,7 @@ export default class Home extends Component {
 				</ScrollView>
 
 				{/*bottom bar*/}
-				<Navigation />
+				{/* <Navigation /> */}
 			</View>
 		)
 	}

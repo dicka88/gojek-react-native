@@ -1,23 +1,66 @@
 import React from 'react';
-import { Text } from 'react-native'
+import { Text, Image } from 'react-native'
 
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import { Home, Signup, Login, Splash } from '../../containers/pages'
+import Icon from '../../containers/component/NavigationItem'
+
+import {
+    Home,
+    Signup,
+    Login,
+    Splash,
+    Inbox,
+    Account,
+    Help,
+    Orders
+} from '../../containers/pages'
 
 const TabsScreen = createBottomTabNavigator({
-    Home,
-    Login,
-    Signup
-})
-
-const SwitchScreen = createSwitchNavigator({
-    Splash: Splash,
-    Home: Home
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => < Icon focused = { focused }
+            name = "home" / >
+        }
+    },
+    Orders: {
+        screen: Orders,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => < Icon focused = { focused }
+            name = "order" / >
+        }
+    },
+    Help: {
+        screen: Help,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => < Icon focused = { focused }
+            name = "help" / >
+        }
+    },
+    Inbox: {
+        screen: Inbox,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => < Icon focused = { focused }
+            name = "inbox" / >
+        }
+    },
+    Account: {
+        screen: Account,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => < Icon focused = { focused }
+            name = "account" / >
+        }
+    }
 }, {
-    initialRouteName: "Splash"
+    order: ['Home', 'Orders', 'Help', 'Inbox', 'Account'],
+    animationEnabled: true,
+    tabBarOptions: {
+        activeTintColor: 'green',
+        inactiveTintColor: 'grey'
+    }
 })
 
 const StackScreen = createStackNavigator({
@@ -41,6 +84,13 @@ const StackScreen = createStackNavigator({
     }
 }, {
     initialRouteName: 'Splash',
+})
+
+const SwitchScreen = createSwitchNavigator({
+    Splash: Splash,
+    Home: TabsScreen
+}, {
+    initialRouteName: "Splash"
 })
 
 export default createAppContainer(StackScreen)
