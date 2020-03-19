@@ -4,9 +4,7 @@ import {
 	Text, 
 	ScrollView, 
 	Image, 
-	TextInput, 
 	StyleSheet, 
-	StatusBar
  } from 'react-native'
 
 import { 
