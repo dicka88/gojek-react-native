@@ -7,7 +7,7 @@ const icon = {
 
 export default class Splash extends Component {
     performTimeConsumingTask = async() => {
-        return new Promise((resolve) => setTimeout(() => { resolve('result') }, 2000 ))
+        return new Promise((resolve) => setTimeout(() => { resolve('result') }, 1500 ))
     }
     
     async componentDidMount() {
@@ -21,7 +21,7 @@ export default class Splash extends Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: '#fff' , alignItems: 'center', justifyContent: 'center' }}>
-                <Image style={{ width: 170, height: 235 }} source={icon.gojek} />
+                <Image style={{ width: 150, height: 205 }} source={icon.gojek} />
             </View>
         ) 
     }
