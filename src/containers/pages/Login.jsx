@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center', 
 		width: '100%', 
 		backgroundColor: '#3b5998', 
-		padding: 15 
+		padding: 15,
+		borderRadius: 5
 	},
 })
