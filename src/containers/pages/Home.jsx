@@ -4,11 +4,15 @@ import {
 	Text, 
 	ScrollView, 
 	Image, 
-	StyleSheet, 
+	StyleSheet,
+	TouchableOpacity
  } from 'react-native'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+// import { faThumbsUp as solid } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp as regular } from '@fortawesome/free-regular-svg-icons'
 
-import component from '../component'
-const { Gopay, Navigation, Services, Topbar } = component
+
+import { Gopay, Services, Topbar, } from '../component'
 
 export default class Home extends Component {
 	constructor(props) {
@@ -19,25 +23,31 @@ export default class Home extends Component {
 
 		const content =  {
 			length: [{
+				id: 1,
 				title: 'Here are your must-knows about COVID-19',
 				information: 'Here are some information & tips on simple actions to minimize the risks of Coronavirus',
 				subMenu: [
 					{
+						id: 1,
 						images: require('../../assets/dummy/go-food-kfc.jpg')
 					},
 					{
+						id: 2,
 						images: require('../../assets/dummy/go-food-kfc.jpg'),
 					},
 					{
+						id: 3,
 						images: require('../../assets/logo/gojek.png'),
 					}
 				]
 			},
 			{
+				id: 2,
 				title: 'International WHO annoncuement about coronavirus',
 				information: '2020/03/20 here WHO declare ',
 				subMenu: [
 					{
+						id: 1,
 						images: require('../../assets/dummy/go-food-kfc.jpg')
 					}
 				]
@@ -68,31 +78,31 @@ export default class Home extends Component {
 								</View>
 								<View style={{ flexDirection: 'row', paddingTop: 5}}>
 									<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-										<View style={{ backgroundColor: 'green', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										<TouchableOpacity style={{ backgroundColor: 'green', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'white' }}>All</Text>
-										</View>
-										<View style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										</TouchableOpacity>
+										<TouchableOpacity style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'black' }}>Entertaiment</Text>
-										</View>
-										<View style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										</TouchableOpacity>
+										<TouchableOpacity style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'black' }}>Payments</Text>
-										</View>
-										<View style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										</TouchableOpacity>
+										<TouchableOpacity style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'black' }}>Promos</Text>
-										</View>
-										<View style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										</TouchableOpacity>
+										<TouchableOpacity style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'black' }}>Transport</Text>
-										</View>
-										<View style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
+										</TouchableOpacity>
+										<TouchableOpacity style={{ backgroundColor: 'white', marginHorizontal: 3, paddingHorizontal: 10, borderRadius: 20, borderColor: '#d1d1d1', padding: 5, borderWidth: 1, justifyContent: 'center' }}>
 											<Text style={{ color: 'black' }}>Promos</Text>
-										</View>
+										</TouchableOpacity>
 									</ScrollView>
 								</View>
 							</View>
 							{ 
 								content.length.map( e => {
 									return (
-										<View style={{ marginTop: 4,}}>
+										<View key={e.id} style={{ marginTop: 4,}}>
 											<View style={{ paddingLeft: 20, paddingTop: 10 }}>
 												<Image source={require('../../assets/logo/gojek.png')} />
 												<View style={{ marginTop: 5 }}>
@@ -109,7 +119,36 @@ export default class Home extends Component {
 													<ScrollView horizontal showsHorizontalScrollIndicator={false}>
 														{
 															e.subMenu.map(item => {
-																return <Image style={{ marginLeft: 20, borderRadius: 10, width: 300, height: 200 }} resizeMode='stretch' source={item.images} />
+																return  (
+																	<View key={item.id} style={{ flex: 1}}>
+																		<Image style={{ 
+																			marginLeft: 20, 
+																			borderTopLeftRadius: 10, 
+																			borderTopRightRadius: 10, 
+																			width: 300, height: 200 
+																			}} resizeMode='stretch' source={item.images} />
+																		<View style={{ 
+																			marginLeft: 20, 
+																			borderBottomWidth: 3, 
+																			borderLeftWidth: 1,
+																			borderRightWidth: 1,
+																			borderColor: '#e3e3e3',
+																			borderBottomLeftRadius: 8, 
+																			borderBottomRightRadius: 8, 
+																			padding: 10, 
+																			width: 300, 
+																			height: 'auto' 
+																		}}>
+																			<Text style={{ fontWeight: 'bold', fontSize: 20 }}>Learn it to get away from it</Text>
+																			<Text style={{ color: 'grey' }}>All that you need to know about COVID-19 can be found here</Text>
+																			<View style={{ flex:1, margin: 10, alignItems: 'flex-end' }}>
+																				<TouchableOpacity>
+																					<FontAwesomeIcon icon={regular} />
+																				</TouchableOpacity>
+																			</View>
+																		</View>
+																	</View>
+																	)
 															})
 														}	
 													</ScrollView>

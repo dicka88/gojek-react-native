@@ -16,7 +16,7 @@ const Item = ({ src, title }) => {
     return (
         <View style={styles.item}>
             <Image source={src} />
-            <Text style={{color: 'black'}}>GoRide</Text>
+            <Text style={{color: 'black'}}>{ title }</Text>
         </View>
     )
 }
@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
     container: { 
         backgroundColor: 'white', 
         borderRadius: 5, 
-        paddingVertical: 20, 
-        marginVertical: 15,
+        paddingVertical: 10, 
+        marginVertical: 10,
     },
     subContainer: { 
         flexDirection: 'row', 

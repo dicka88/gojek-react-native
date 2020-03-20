@@ -3,7 +3,7 @@ import Topbar from './Topbar'
 import Services from './Services'
 import Navigation from './Navigation'
 
-export default {
+export {
     Gopay,
     Topbar,
     Services,

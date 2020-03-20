@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, Image } from 'react-native'
 
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -18,40 +17,36 @@ import {
     Orders
 } from '../../containers/pages'
 
+// Tabscreen --------------------
 const TabsScreen = createBottomTabNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
-            tabBarIcon: ({ focused }) => < Icon focused = { focused }
-            name = "home" / >
+            tabBarIcon: ({ focused }) => <Icon focused = { focused } name = "home" />
         }
     },
     Orders: {
         screen: Orders,
         navigationOptions: {
-            tabBarIcon: ({ focused }) => < Icon focused = { focused }
-            name = "order" / >
+            tabBarIcon: ({ focused }) => <Icon focused = { focused } name = "order" />
         }
     },
     Help: {
         screen: Help,
         navigationOptions: {
-            tabBarIcon: ({ focused }) => < Icon focused = { focused }
-            name = "help" / >
+            tabBarIcon: ({ focused }) => <Icon focused = { focused } name = "help" />
         }
     },
     Inbox: {
         screen: Inbox,
         navigationOptions: {
-            tabBarIcon: ({ focused }) => < Icon focused = { focused }
-            name = "inbox" / >
+            tabBarIcon: ({ focused }) => <Icon focused = { focused } name = "inbox" />
         }
     },
     Account: {
         screen: Account,
         navigationOptions: {
-            tabBarIcon: ({ focused }) => < Icon focused = { focused }
-            name = "account" / >
+            tabBarIcon: ({ focused }) => <Icon focused = { focused } name = "account" />
         }
     }
 }, {
@@ -60,62 +55,51 @@ const TabsScreen = createBottomTabNavigator({
     tabBarOptions: {
         activeTintColor: 'green',
         inactiveTintColor: 'grey',
+        labelStyle: {
+            fontSize: 13
+        },
         style: {
-            height: 60
+            height: 60,
+            paddingVertical: 5
         }
     }
 })
 
-const StackScreen = createStackNavigator({
-    Home: {
+// Stack screen -------------------
+const AuthScreen = createStackNavigator({
+    Login: {
         screen: Home,
         navigationOptions: {
             headerShown: false,
         }
     },
-    Login: {
-        screen: Login
-    },
-    Splash: {
+    Signup: {
         screen: Splash,
         navigationOptions: {
             headerShown: false,
         }
     },
-    Signup: {
-        screen: Signup
-    }
 }, {
-    initialRouteName: 'Splash',
+    initialRouteName: 'Login',
 })
+
+// const HomeScreen = createStackNavigator()
+// const OrdersScreen = createStackNavigator()
+// const HelpScreen = createStackNavigator()
+// const InboxScreen = createStackNavigator()
+// const AccountScreen = createStackNavigator()
+
+// switch ---------------------------------
 
 const SwitchScreen = createSwitchNavigator({
+    Login,
     Splash: Splash,
+    Auth: AuthScreen,
     Home: TabsScreen
 }, {
-    initialRouteName: "Splash"
+    initialRouteName: "Login"
 })
 
-export default createAppContainer(StackScreen)
+export default createAppContainer(AuthScreen)
 export const Tabs = createAppContainer(TabsScreen)
 export const Switch = createAppContainer(SwitchScreen)
-
-// react-navigation 5
-
-// import { NavigationContainer } from '@react-navigation/native'
-// import { createStackNavigator } from '@react-navigation/stack'
-
-// const Stack = createStackNavigator()
-
-// export default function Router() {
-//     return (
-//         <NavigationContainer>
-//             <Stack.Navigator>
-//                 <Stack.Screen name="home" component={Home} />
-//                 <Stack.Screen name="signin" component={Login} />
-//                 <Stack.Screen name="splash" component={Splash} />
-//                 <Stack.Screen name="signup" component={Signup} />
-//             </Stack.Navigator>
-//         </NavigationContainer>
-//     )
-// }
