@@ -11,40 +11,33 @@ export default class Login extends Component {
 		}
 
 		return(
-			<View style={{ flex: 1, padding: 20}}>
+			<View style={styles.container}>
 				<StatusBar barstyle="dark-content" backgroundColor="white" />
-				<View style={{ height: 45, flexDirection: 'row', justifyContent: 'space-between', }}>
+				<View style={styles.topbar}>
 					<Image source={img.login} style={{ height: 25, width: 115, alignSelf: 'stretch' }} />
-					<TouchableOpacity style={{ 
-						borderRadius: 50, 
-						backgroundColor: 'green', 
-						height: 30,
-						width: 30,
-						justifyContent: 'center',
-						alignItems: 'center',
-						 }}>
+					<TouchableOpacity style={styles.buttonLang}>
 						<Text style={{ fontWeight: 'bold', color: 'white' }}>EN</Text>
 					</TouchableOpacity>
 				</View>
-				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', flexDirection: 'row' }}>
-					<Image style={{ width: '80%', height: 200 }} source={img.illustration} />
+				<View style={styles.imageContainer}>
+					<Image style={styles.image} source={img.illustration} />
 				</View>
 				<View style={{ marginTop: 40 }}>
 					<View>
-						<Text style={{ fontWeight: 'bold', fontSize: 25 }}>Welcome to Gojek!</Text>
-						<Text style={{ fontSize: 15 }}>Are you ready to enjoy a whole new life without limits?</Text>
-						<Text style={{ fontSize: 15 }}>Lets go!</Text>
+						<Text style={styles.textTitle}>Welcome to Gojek!</Text>
+						<Text style={styles.textContent}>Are you ready to enjoy a whole new life without limits?</Text>
+						<Text style={styles.textContent}>Lets go!</Text>
 					</View>
-					<View style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
-						 <TouchableOpacity style={{ borderRadius: 5, padding: 15, width: '47%', backgroundColor: '#1eb346', alignItems: 'center', }} >
+					<View style={styles.buttonContainer}>
+						 <TouchableOpacity style={styles.buttonLogin} >
 						 	<Text style={{ color: 'white', fontWeight: 'bold' }}>LOG IN</Text>
 						 </TouchableOpacity>
-						 <TouchableOpacity style={{ borderRadius: 5, padding: 15, width: '47%', backgroundColor: '#1eb346', alignItems: 'center', }} >
+						 <TouchableOpacity style={styles.buttonLogin} >
 						 	<Text style={{ color: 'white', fontWeight: 'bold' }}>REGISTER</Text>
 						 </TouchableOpacity>
 					</View>
-					<View style={{ marginTop: 10 }}>
-						<TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: '#3b5998', padding: 15 }}>
+					<View style={styles.authContainer}>
+						<TouchableOpacity style={styles.facebookContainer}>
 							<FontAwesomeIcon size={30} style={{ color: 'white', position: 'absolute', left: 15 }} icon={faFacebookSquare} />
 							<Text style={{ fontWeight: 'bold', color: 'white' }}>CONTINUE WITH FACEBOOK</Text>
 						</TouchableOpacity>
@@ -57,3 +50,63 @@ export default class Login extends Component {
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+	container: { 
+		flex: 1, 
+		padding: 20
+	},
+	topbar: { 
+		height: 45, 
+		flexDirection: 'row', 
+		justifyContent: 'space-between', 
+	},
+	buttonLang: { 
+		borderRadius: 50, 
+		backgroundColor: 'green', 
+		height: 30,
+		width: 30,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	imageContainer: { 
+		flex: 1, 
+		justifyContent: 'center', 
+		alignItems: 'flex-end', 
+		flexDirection: 'row' 
+	},
+	image: { 
+		width: '80%', 
+		height: 200 
+	},
+	buttonContainer: { 
+		marginTop: 10, 
+		flexDirection: 'row', 
+		justifyContent: 'space-between' 
+	},
+	textTitle: { 
+		fontWeight: 'bold', 
+		fontSize: 25 
+	},
+	textContent: { 
+		fontSize: 15 
+	},
+	authContainer: { 
+		marginTop: 10 
+	},
+	buttonLogin: { 
+		borderRadius: 5, 
+		padding: 15, 
+		width: '47%', 
+		backgroundColor: '#1eb346', 
+		alignItems: 'center'
+	},
+	facebookContainer: { 
+		flexDirection: 'row', 
+		alignItems: 'center', 
+		justifyContent: 'center', 
+		width: '100%', 
+		backgroundColor: '#3b5998', 
+		padding: 15 
+	},
+})
