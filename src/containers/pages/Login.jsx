@@ -6,7 +6,7 @@ import { faFacebook, faFacebookSquare } from '@fortawesome/free-brands-svg-icons
 export default class Login extends Component {
 	render() {
 		const img = {
-			login: require('../../assets/logo/gojeknew.png'),
+			login: require('../../assets/logo/gojek.png'),
 			illustration: require('../../assets/illustration/login.png')
 		}
 

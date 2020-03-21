@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Image, StatusBar } from 'react-native'
 
 const icon = {
-    gojek: require('../../assets/icon/gojek-icon.png')
+    gojek: require('../../assets/logo/gojek-circle.png')
 }
 
 export default class Splash extends Component {
