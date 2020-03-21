@@ -29,7 +29,7 @@ export default class Login extends Component {
 						<Text style={styles.textContent}>Lets go!</Text>
 					</View>
 					<View style={styles.buttonContainer}>
-						 <TouchableOpacity style={styles.buttonLogin} >
+						 <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.buttonLogin} >
 						 	<Text style={{ color: 'white', fontWeight: 'bold' }}>LOG IN</Text>
 						 </TouchableOpacity>
 						 <TouchableOpacity style={styles.buttonLogin} >

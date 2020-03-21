@@ -13,8 +13,14 @@ export default class Splash extends Component {
     async componentDidMount() {
         const data = await this.performTimeConsumingTask();
         
+        const session = false
+
         if (data !== null) {
-            this.props.navigation.navigate('Home');
+            if(session) {
+                this.props.navigation.navigate('Home');
+            } else {
+                this.props.navigation.navigate('Auth');
+            }
         }
     }
 

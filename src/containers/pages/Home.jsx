@@ -104,7 +104,7 @@ export default class Home extends Component {
 									return (
 										<View key={e.id} style={{ marginTop: 4,}}>
 											<View style={{ paddingLeft: 20, paddingTop: 10 }}>
-												<Image source={require('../../assets/logo/gojek.png')} />
+												<Image style={{ width: 70, height: 20 }} source={require('../../assets/logo/gojek.png')} />
 												<View style={{ marginTop: 5 }}>
 													<Text style={{ fontWeight: 'bold' }}>{ e.title }</Text>
 												</View>

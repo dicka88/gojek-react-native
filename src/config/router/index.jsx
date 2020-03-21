@@ -68,13 +68,13 @@ const TabsScreen = createBottomTabNavigator({
 // Stack screen -------------------
 const AuthScreen = createStackNavigator({
     Login: {
-        screen: Home,
+        screen: Login,
         navigationOptions: {
             headerShown: false,
         }
     },
     Signup: {
-        screen: Splash,
+        screen: Signup,
         navigationOptions: {
             headerShown: false,
         }
@@ -87,17 +87,15 @@ const AuthScreen = createStackNavigator({
 // const OrdersScreen = createStackNavigator()
 // const HelpScreen = createStackNavigator()
 // const InboxScreen = createStackNavigator()
-// const AccountScreen = createStackNavigator()
 
 // switch ---------------------------------
 
 const SwitchScreen = createSwitchNavigator({
-    Login,
     Splash: Splash,
     Auth: AuthScreen,
     Home: TabsScreen
 }, {
-    initialRouteName: "Login"
+    initialRouteName: "Splash"
 })
 
 export default createAppContainer(AuthScreen)
