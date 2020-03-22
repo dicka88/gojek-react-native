@@ -29,15 +29,21 @@ export default class Home extends Component {
 				subMenu: [
 					{
 						id: 1,
-						images: require('../../assets/dummy/go-food-kfc.jpg')
+						images: require('../../assets/dummy/topic1.png'),
+						title: 'Learn it to get away from it',
+						subTitle: 'All that you need to know about COVID-19 can be found here'
 					},
 					{
 						id: 2,
-						images: require('../../assets/dummy/go-food-kfc.jpg'),
+						images: require('../../assets/dummy/topic2.png'),
+						title: 'Learn it to get away from it',
+						subTitle: 'All that you need to know about COVID-19 can be found here'
 					},
 					{
 						id: 3,
-						images: require('../../assets/logo/gojek.png'),
+						images: require('../../assets/dummy/topic3.png'),
+						title: 'Learn it to get away from it',
+						subTitle: 'All that you need to know about COVID-19 can be found here'
 					}
 				]
 			},
@@ -125,7 +131,7 @@ export default class Home extends Component {
 																			marginLeft: 20, 
 																			borderTopLeftRadius: 10, 
 																			borderTopRightRadius: 10, 
-																			width: 300, height: 200 
+																			width: 330, height: 200 
 																			}} resizeMode='stretch' source={item.images} />
 																		<View style={{ 
 																			marginLeft: 20, 
@@ -136,11 +142,11 @@ export default class Home extends Component {
 																			borderBottomLeftRadius: 8, 
 																			borderBottomRightRadius: 8, 
 																			padding: 10, 
-																			width: 300, 
+																			width: 330, 
 																			height: 'auto' 
 																		}}>
-																			<Text style={{ fontWeight: 'bold', fontSize: 20 }}>Learn it to get away from it</Text>
-																			<Text style={{ color: 'grey' }}>All that you need to know about COVID-19 can be found here</Text>
+																			<Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title || 'null'}</Text>
+																			<Text style={{ color: 'grey' }}>{item.subTitle || 'null'}</Text>
 																			<View style={{ flex:1, margin: 10, alignItems: 'flex-end' }}>
 																				<TouchableOpacity>
 																					<FontAwesomeIcon icon={regular} />
