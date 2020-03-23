@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { View, Image, StatusBar } from 'react-native'
 
 const icon = {
@@ -7,12 +7,12 @@ const icon = {
 
 export default class Splash extends Component {
     performTimeConsumingTask = async() => {
-        return new Promise((resolve) => setTimeout(() => { resolve('result') }, 1500 ))
+        return new Promise((resolve) => setTimeout(() => { resolve('result') }, 1000 ))
     }
     
     async componentDidMount() {
         const data = await this.performTimeConsumingTask();
-        
+
         const session = false
 
         if (data !== null) {
@@ -27,7 +27,7 @@ export default class Splash extends Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: '#fff' , alignItems: 'center', justifyContent: 'center' }}>
-                <Image style={{ width: 150, height: 205 }} source={icon.gojek} />
+                <Image style={{ width: 135, height: 185 }} source={icon.gojek} />
             </View>
         ) 
     }

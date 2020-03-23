@@ -14,7 +14,9 @@ import {
     Inbox,
     Account,
     Help,
-    Orders
+    Orders,
+    Term,
+    PrivacyPolicy
 } from '../../containers/pages'
 
 // Tabscreen --------------------
@@ -79,6 +81,22 @@ const AuthScreen = createStackNavigator({
             headerShown: false,
         }
     },
+    Term: {
+        screen: Term,
+        navigationOptions: {
+            headerShown: true,
+            title: 'Terms and Condition',
+            animationEnabled: false
+        }
+    },
+    PrivacyPolicy: {
+        screen: PrivacyPolicy,
+        navigationOptions: {
+            headerShown: true,
+            title: 'Privacy Policy',
+            animationEnabled: false
+        }
+    }
 }, {
     initialRouteName: 'Login',
 })
@@ -98,6 +116,4 @@ const SwitchScreen = createSwitchNavigator({
     initialRouteName: "Splash"
 })
 
-export default createAppContainer(AuthScreen)
-export const Tabs = createAppContainer(TabsScreen)
-export const Switch = createAppContainer(SwitchScreen)
+export default createAppContainer(SwitchScreen)

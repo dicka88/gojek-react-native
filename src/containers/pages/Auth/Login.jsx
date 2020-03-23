@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import { StyleSheet, Button, Text, View, Image, StatusBar, TouchableOpacity} from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faFacebook, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+import SplashScreen from 'react-native-splash-screen'
 
 export default class Login extends Component {
+
+	componentDidMount() {
+		SplashScreen.hide()
+	}
+
 	render() {
 		const img = {
-			login: require('../../assets/logo/gojek.png'),
-			illustration: require('../../assets/illustration/login.png')
+			login: require('../../../assets/logo/gojek.png'),
+			illustration: require('../../../assets/illustration/login.png')
 		}
 
 		return(
@@ -42,8 +48,8 @@ export default class Login extends Component {
 							<Text style={{ fontWeight: 'bold', color: 'white' }}>CONTINUE WITH FACEBOOK</Text>
 						</TouchableOpacity>
 					</View>
-					<View style={{ marginTop: 10, }}>
-						 <Text style={{ fontSize: 13 }}>By logging in or registering, I agree to our <Text style={{ color: 'green' }}>Terms of Service</Text> and <Text style={{ color: 'green' }}>Privacy Policy</Text>.</Text>
+					<View style={{ marginTop: 10 }}>
+						<Text style={{ fontSize: 13 }}>By logging in or registering, I agree to our <Text onPress={() => this.props.navigation.navigate('Term')} style={{ color: 'green' }}>Terms of Service</Text> and <Text onPress={() => this.props.navigation.navigate('PrivacyPolicy')} style={{ color: 'green' }}>Privacy Policy.</Text></Text>
 					</View>
 				</View>
 			</View>

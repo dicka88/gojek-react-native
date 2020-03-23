@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faThumbsUp as regular } from '@fortawesome/free-regular-svg-icons'
 
 
-import { Gopay, Services, Topbar, } from '../component'
+import { Gopay, Services, Topbar, } from '../../component'
 
 export default class Home extends Component {
 	constructor(props) {
@@ -29,19 +29,19 @@ export default class Home extends Component {
 				subMenu: [
 					{
 						id: 1,
-						images: require('../../assets/dummy/topic1.png'),
+						images: require('../../../assets/dummy/topic1.png'),
 						title: 'Learn it to get away from it',
 						subTitle: 'All that you need to know about COVID-19 can be found here'
 					},
 					{
 						id: 2,
-						images: require('../../assets/dummy/topic2.png'),
+						images: require('../../../assets/dummy/topic2.png'),
 						title: 'Learn it to get away from it',
 						subTitle: 'All that you need to know about COVID-19 can be found here'
 					},
 					{
 						id: 3,
-						images: require('../../assets/dummy/topic3.png'),
+						images: require('../../../assets/dummy/topic3.png'),
 						title: 'Learn it to get away from it',
 						subTitle: 'All that you need to know about COVID-19 can be found here'
 					}
@@ -54,7 +54,7 @@ export default class Home extends Component {
 				subMenu: [
 					{
 						id: 1,
-						images: require('../../assets/dummy/go-food-kfc.jpg')
+						images: require('../../../assets/dummy/go-food-kfc.jpg')
 					}
 				]
 			}
@@ -110,7 +110,7 @@ export default class Home extends Component {
 									return (
 										<View key={e.id} style={{ marginTop: 4,}}>
 											<View style={{ paddingLeft: 20, paddingTop: 10 }}>
-												<Image style={{ width: 70, height: 20 }} source={require('../../assets/logo/gojek.png')} />
+												<Image style={{ width: 70, height: 20 }} source={require('../../../assets/logo/gojek.png')} />
 												<View style={{ marginTop: 5 }}>
 													<Text style={{ fontWeight: 'bold' }}>{ e.title }</Text>
 												</View>

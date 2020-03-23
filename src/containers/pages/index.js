@@ -1,11 +1,26 @@
-import Login from './Login'
-import Signup from './Signup'
-import Home from './Home'
 import Splash from './Splash'
-import Account from './Account'
-import Orders from './Orders'
-import Help from './Help'
-import Inbox from './Inbox'
+
+// Auth
+import Login from './Auth/Login'
+import Signup from './Auth/Signup'
+import Term from './Auth/Term'
+import PrivacyPolicy from './Auth/PrivacyPolicy'
+
+
+// Home
+import Home from './Home/Home'
+
+// Orders
+import Orders from './Orders/Orders'
+
+// Help
+import Help from './Help/Help'
+
+// Inbox
+import Inbox from './Inbox/Inbox'
+
+// Account
+import Account from './Account/Account'
 
 export {
     Splash,
@@ -15,5 +30,7 @@ export {
     Account,
     Inbox,
     Orders,
-    Help
+    Help,
+    Term,
+    PrivacyPolicy
 }

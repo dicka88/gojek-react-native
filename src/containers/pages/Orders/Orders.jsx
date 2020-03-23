@@ -10,7 +10,7 @@ export default class Orders extends Component {
 
     render() {
         const image = {
-            no_order: require('../../assets/illustration/no_orders.png')
+            no_order: require('../../../assets/illustration/no_orders.png')
         }
 
         return (
@@ -30,7 +30,7 @@ export default class Orders extends Component {
                     <FontAwesomeIcon size={20} icon={history} />
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <Image style={{ width: '55%', height: 160 }} source={image.no_order} />
+                    <Image style={{ width: '55%', height: 140 }} source={image.no_order} />
                     <View style={{ alignItems: 'center', marginTop: 35 }}>
                         <Text style={{ fontWeight: 'bold', fontSize: 18}} >Let's order Gojek!</Text>
                         <Text style={{ marginTop: 10, color: 'grey' }}>Our drivers will be very happy to help you.</Text>
