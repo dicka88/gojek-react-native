@@ -5,7 +5,7 @@ import {
 	ScrollView, 
 	Image, 
 	StyleSheet,
-	TouchableOpacity
+	TouchableOpacity,
  } from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 // import { faThumbsUp as solid } from '@fortawesome/free-solid-svg-icons'
@@ -15,6 +15,10 @@ import { faThumbsUp as regular } from '@fortawesome/free-regular-svg-icons'
 import { Gopay, Services, Topbar, } from '../../component'
 
 export default class Home extends Component {
+	static navigationOptions = {
+		headerShown: false
+	}
+
 	constructor(props) {
 		super(props)
 	}
@@ -49,7 +53,7 @@ export default class Home extends Component {
 			},
 			{
 				id: 2,
-				title: 'International WHO annoncuement about coronavirus',
+				title: 'International WHO announcment about coronavirus',
 				information: '2020/03/20 here WHO declare ',
 				subMenu: [
 					{
@@ -64,7 +68,7 @@ export default class Home extends Component {
 		return (
 			<View style={{flex: 1}}>
 				{/*top bar*/}
-				<Topbar />
+				<Topbar promoPress={ () => this.props.navigation.navigate('Promos') } />
 
 				{/*body content*/}
 				<ScrollView showsVerticalScrollIndicator={false}>

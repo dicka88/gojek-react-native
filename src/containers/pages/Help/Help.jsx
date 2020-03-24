@@ -8,7 +8,7 @@ export default class Help extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1 }} >
+            <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <View style={{ 
                     height: 50, 
                     flexDirection: 'row', 
@@ -16,7 +16,7 @@ export default class Help extends Component {
                     borderBottomWidth: 1, 
                     borderBottomColor: '#e3e3e3',
                     alignItems: 'center',
-                    paddingHorizontal: 20
+                    paddingHorizontal: 20,
                 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
                         Help

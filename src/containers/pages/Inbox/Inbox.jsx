@@ -57,6 +57,13 @@ export default class Inbox extends Component {
                 title: 'Beli pulsa sekarang mudah !',
                 subTitle: 'Lewat Gopay beli pulsa tidak perlu ke konter',
                 images: null
+            },{
+                id: 5,
+                category: 'gopay',
+                time: '1584944379679',
+                title: 'Gopay',
+                subTitle: 'Top up sebesar Rp. 150.000 melalui Indomaret telah sukses',
+                images: null
             },
             ]
 
@@ -66,7 +73,7 @@ export default class Inbox extends Component {
             }
 
             return (
-                <ScrollView style={{ flex: 1, padding: 20 }}>
+                <ScrollView style={{ flex: 1, padding: 20, backgroundColor: 'white' }}>
                     {
                         contentLength.map(e => {
                             return (
@@ -101,7 +108,7 @@ export default class Inbox extends Component {
         }
 
         return (
-            <View style={{ flex: 1 }} >
+            <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <View style={{ 
                     height: 50, 
                     flexDirection: 'row', 
@@ -109,7 +116,8 @@ export default class Inbox extends Component {
                     borderBottomWidth: 1, 
                     borderBottomColor: '#e3e3e3',
                     alignItems: 'center',
-                    paddingHorizontal: 20
+                    paddingHorizontal: 20,
+                    
                 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
                         Inbox

@@ -5,7 +5,7 @@ import netInfo from '@react-native-community/netinfo'
 
 export default function WebViewer(props) {
 
-    const [conn, setConn] = useState(false)
+    const [conn, setConn] = useState(true)
 
     useEffect(() => {
         netInfo.fetch().then(state => {

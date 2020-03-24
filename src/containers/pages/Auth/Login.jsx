@@ -1,13 +1,40 @@
 import React, { Component } from 'react'
-import { StyleSheet, Button, Text, View, Image, StatusBar, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, StatusBar, TouchableOpacity, Modal} from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faFacebook, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
-import SplashScreen from 'react-native-splash-screen'
+import { faFacebookSquare, } from '@fortawesome/free-brands-svg-icons'
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default class Login extends Component {
 
+	state = {
+		lang: 'id',
+		barColor: 'white',
+		modal: {
+			visible: false
+		},
+	}
+
 	componentDidMount() {
-		SplashScreen.hide()
+
+	}
+
+	updateLang(props) {
+		this.setState({
+			...this.state,
+			lang: props
+		})
+	}
+
+	modal(props) {
+		const act = props ? true : false
+		const barColor = props ? 'rgba(52, 52, 52, 0.5)' : 'white'
+		this.setState({
+			...this.state,
+			barColor: barColor,
+			modal: {
+				visible: act
+			}
+		})
 	}
 
 	render() {
@@ -16,12 +43,48 @@ export default class Login extends Component {
 			illustration: require('../../../assets/illustration/login.png')
 		}
 
+		const language = [
+			{
+				id: 'en',
+				lang: 'English',
+				color: '#3e6bb5'
+			},{
+				id: 'id',
+				lang: 'Bahasa Indonesia',
+				color: '#2bad41'
+			}, {
+				id: 'jv',
+				lang: 'Boso Jowo',
+				color: '#662b00'
+			}, {
+				id: 'ge',
+				lang: 'Germany',
+				color: '#ff4500'
+			}
+		]
+
+		const ListLang = ({l18n}) => {
+			return (
+				<View key={l18n.id} style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+					<View style={{ flexDirection: 'row', alignItems: 'center' }}>
+						<View style={{ ...styles.buttonLang, backgroundColor: l18n.color, marginRight: 15, marginVertical: 10 }}>
+							<Text style={{ fontWeight: 'bold', color: 'white' }}>{ l18n.id.toUpperCase() }</Text>
+						</View>
+						<Text>{ l18n.lang }</Text>
+					</View>
+					<TouchableOpacity onPress={ () => this.updateLang(l18n.id) } style={{ ...styles.buttonLang, backgroundColor:  this.state.lang == l18n.id ? 'green' : '#f2f2f2' }}>
+						{ this.state.lang == l18n.id ? <FontAwesomeIcon color="white" icon={faCheck} /> : null }
+					</TouchableOpacity>
+				</View>
+			)
+		}
+
 		return(
 			<View style={styles.container}>
-				<StatusBar barstyle="dark-content" backgroundColor="white" />
+				<StatusBar barstyle="dark-content" backgroundColor={this.state.barColor} />
 				<View style={styles.topbar}>
-					<Image source={img.login} style={{ height: 25, width: 115, alignSelf: 'stretch' }} />
-					<TouchableOpacity style={styles.buttonLang}>
+					<Image source={img.login} style={{ height: 25, width: 110, alignSelf: 'stretch' }} />
+					<TouchableOpacity onPress={() => this.modal(true)} style={styles.buttonLang}>
 						<Text style={{ fontWeight: 'bold', color: 'white' }}>EN</Text>
 					</TouchableOpacity>
 				</View>
@@ -52,6 +115,34 @@ export default class Login extends Component {
 						<Text style={{ fontSize: 13 }}>By logging in or registering, I agree to our <Text onPress={() => this.props.navigation.navigate('Term')} style={{ color: 'green' }}>Terms of Service</Text> and <Text onPress={() => this.props.navigation.navigate('PrivacyPolicy')} style={{ color: 'green' }}>Privacy Policy.</Text></Text>
 					</View>
 				</View>
+				{/* Modal Change Lang */}
+				<Modal
+					animationType="slide"
+					transparent={true}
+					visible={this.state.modal.visible}
+				>
+					<View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-end', backgroundColor: 'rgba(52, 52, 52, 0.5)',}}>
+						<TouchableOpacity onPress={ () => this.modal(false) } style={{ flex: 1, width: '100%'}}></TouchableOpacity>
+						<View style={{ width: '100%', flex:1, position: 'absolute', bottom: 0, padding: 15, backgroundColor: 'white', }}>
+							<View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+								<View>
+									<Text style={{ fontSize: 20, fontWeight: 'bold' }}>Change Language</Text>
+									<Text style={{ color: '#d1d1d1' }}>Which language do you prefer?</Text>
+								</View>
+								<TouchableOpacity style={{width: 40, alignItems: 'flex-end' }} onPress={() => this.modal(false)}>
+									<FontAwesomeIcon icon={faTimes} />
+								</TouchableOpacity>
+							</View>
+							{
+								language.map(item => {
+									return (
+										<ListLang l18n={item} />
+									)
+								})
+							}
+						</View>
+					</View>
+				</Modal>
 			</View>
 		)
 	}
@@ -84,7 +175,7 @@ const styles = StyleSheet.create({
 	},
 	image: { 
 		width: '80%', 
-		height: 200 
+		height: 190 
 	},
 	buttonContainer: { 
 		marginTop: 10, 

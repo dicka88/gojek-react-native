@@ -16,8 +16,44 @@ import {
     Help,
     Orders,
     Term,
-    PrivacyPolicy
+    PrivacyPolicy,
+    Promos,
+    Pay
 } from '../../containers/pages'
+
+// Stack screen -------------------
+const AuthScreen = createStackNavigator({
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            headerShown: false,
+        }
+    },
+    Signup: {
+        screen: Signup,
+        navigationOptions: {
+            headerShown: false,
+        }
+    },
+    Term: {
+        screen: Term,
+        navigationOptions: {
+            headerShown: true,
+            title: 'Terms and Condition',
+            animationEnabled: false
+        }
+    },
+    PrivacyPolicy: {
+        screen: PrivacyPolicy,
+        navigationOptions: {
+            headerShown: true,
+            title: 'Privacy Policy',
+            animationEnabled: false
+        }
+    }
+}, {
+    initialRouteName: 'Login',
+})
 
 // Tabscreen --------------------
 const TabsScreen = createBottomTabNavigator({
@@ -67,53 +103,32 @@ const TabsScreen = createBottomTabNavigator({
     }
 })
 
-// Stack screen -------------------
-const AuthScreen = createStackNavigator({
-    Login: {
-        screen: Login,
+const HomeScreen = createStackNavigator({
+    TabsScreen: {
+        screen: TabsScreen,
         navigationOptions: {
-            headerShown: false,
+            headerShown: false
         }
     },
-    Signup: {
-        screen: Signup,
-        navigationOptions: {
-            headerShown: false,
-        }
-    },
-    Term: {
-        screen: Term,
-        navigationOptions: {
-            headerShown: true,
-            title: 'Terms and Condition',
-            animationEnabled: false
-        }
-    },
-    PrivacyPolicy: {
-        screen: PrivacyPolicy,
-        navigationOptions: {
-            headerShown: true,
-            title: 'Privacy Policy',
-            animationEnabled: false
-        }
-    }
+    Promos,
+    Pay
 }, {
-    initialRouteName: 'Login',
+    initialRouteName: 'TabsScreen'
 })
 
-// const HomeScreen = createStackNavigator()
 // const OrdersScreen = createStackNavigator()
 // const HelpScreen = createStackNavigator()
 // const InboxScreen = createStackNavigator()
 
-// switch ---------------------------------
 
+// switch ---------------------------------
 const SwitchScreen = createSwitchNavigator({
+    Pay: Pay,
     Splash: Splash,
     Auth: AuthScreen,
-    Home: TabsScreen
+    Home: HomeScreen
 }, {
-    initialRouteName: "Splash"
+    initialRouteName: "Pay"
 })
 
 export default createAppContainer(SwitchScreen)

@@ -9,6 +9,8 @@ import PrivacyPolicy from './Auth/PrivacyPolicy'
 
 // Home
 import Home from './Home/Home'
+import Promos from './Home/Promos'
+import Pay from './Home/Pay'
 
 // Orders
 import Orders from './Orders/Orders'
@@ -32,5 +34,7 @@ export {
     Orders,
     Help,
     Term,
-    PrivacyPolicy
+    PrivacyPolicy,
+    Promos,
+    Pay
 }
