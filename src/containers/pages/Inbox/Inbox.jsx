@@ -93,7 +93,7 @@ export default class Inbox extends Component {
                                         </View>
                                     </View>
                                     {
-                                        e.images ? <Image style={{ width: '100%', height: 200, borderRadius: 8, marginVertical: 10 }} source={e.images} /> : <Text></Text>
+                                        e.images && <Image style={{ width: '100%', height: 200, borderRadius: 8, marginVertical: 10 }} source={e.images} />
                                     }
                                 </View>
                             )

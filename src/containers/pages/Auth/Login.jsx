@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, Image, StatusBar, TouchableOpacity, Modal} from 'react-native'
+import { StyleSheet, Text, View, Image, StatusBar, TouchableOpacity, Modal,} from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faFacebookSquare, } from '@fortawesome/free-brands-svg-icons'
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -65,17 +65,17 @@ export default class Login extends Component {
 
 		const ListLang = ({l18n}) => {
 			return (
-				<View key={l18n.id} style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+				<TouchableOpacity onPress={ () => this.updateLang(l18n.id) } key={l18n.id} style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 					<View style={{ flexDirection: 'row', alignItems: 'center' }}>
 						<View style={{ ...styles.buttonLang, backgroundColor: l18n.color, marginRight: 15, marginVertical: 10 }}>
 							<Text style={{ fontWeight: 'bold', color: 'white' }}>{ l18n.id.toUpperCase() }</Text>
 						</View>
 						<Text>{ l18n.lang }</Text>
 					</View>
-					<TouchableOpacity onPress={ () => this.updateLang(l18n.id) } style={{ ...styles.buttonLang, backgroundColor:  this.state.lang == l18n.id ? 'green' : '#f2f2f2' }}>
+					<View style={{ ...styles.buttonLang, backgroundColor:  this.state.lang == l18n.id ? 'green' : '#f2f2f2' }}>
 						{ this.state.lang == l18n.id ? <FontAwesomeIcon color="white" icon={faCheck} /> : null }
-					</TouchableOpacity>
-				</View>
+					</View>
+				</TouchableOpacity>
 			)
 		}
 
@@ -136,7 +136,7 @@ export default class Login extends Component {
 							{
 								language.map(item => {
 									return (
-										<ListLang l18n={item} />
+										<ListLang key={item.id} l18n={item} />
 									)
 								})
 							}
