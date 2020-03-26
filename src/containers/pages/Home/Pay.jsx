@@ -30,27 +30,25 @@ export default class Pay extends React.Component {
         })
     }
 
-    handleModal = () => {
+    handleModal = (data) => {
         const vm = this
         this.setState({
             ...this.state,
+            qrcodeScanned: data,
             modalVisible: !vm.state.modalVisible
         })
-        console.log(this.state);
+        // console.log(this.state);
 
     }
 
     handleScanned = (scan) => {
-        // show modal with qrcode scanned
-        // alert(scan.data)
-        // console.log(scan);
-        
+        console.log(scan);
+        const { data, type } = scan
+
+        if(type != 'QR_CODE') return
+
         Vibration.vibrate()
-        this.handleModal()
-        // this.setState({
-        //     ...this.state,
-        //     qrcodeScanned: scan.data
-        // })
+        this.handleModal(data)
     }
 
     render() {
@@ -58,6 +56,7 @@ export default class Pay extends React.Component {
             <View style={{ flex: 1, backgroundColor: 'white', }}>
                 <View style={{ flex: 5, backgroundColor: '#d1d1d1' }}>
                     <BarCodeScanner
+                        vibrate={false}
                         reactivateTimeout={1000}
                         flashMode={this.state.torch ? RNCamera.Constants.FlashMode.torch : RNCamera.Constants.FlashMode.off}
                         fadeIn={true} 
@@ -135,12 +134,12 @@ export default class Pay extends React.Component {
                     visible={this.state.modalVisible}
                 >
                     <View style={{ justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-                        <TouchableOpacity style={{ padding: 20, borderColor: 'grey', backgroundColor: '#d1d1d1' }} onPress={() => this.handleModal()}>
-                            <Text style={{ fontSize: 20 }}>Close me</Text>
+                        <TouchableOpacity style={{ marginBottom: 20, borderRadius: 8, padding: 20, borderColor: 'grey', backgroundColor: '#d1d1d1' }} onPress={() => this.handleModal()}>
+                            <Text style={{ fontSize: 20, color: 'white' }}>{this.state.qrcodeScanned}</Text>
                         </TouchableOpacity>
                         <QRCode
                             value={this.state.qrcodeScanned}
-                            size={300}
+                            size={200}
                             bgColor='black'
                             fgColor='white' 
                         />
