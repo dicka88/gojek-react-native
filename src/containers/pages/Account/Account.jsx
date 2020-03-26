@@ -4,6 +4,37 @@ import { View, Text, Image } from 'react-native'
 export default class Account extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            data: null
+        }
+    }
+
+    async componentDidMount() {
+        try {
+            const ft = await fetch('https://api.github.com/users/dicka88')
+            const json = await ft.json()
+            
+            this.setState({
+                data: json
+            })
+        } catch (e) {
+            alert("Connection is off")
+        }
+
+    }
+
+    RenderData = () => {
+        const { login, id, name, location, bio } = this.state.data
+        return (
+            <>
+                <Text>Login : { login }</Text>
+                <Text>id : { id }</Text>
+                <Text>Name : { name }</Text>
+                <Text>Location : { location }</Text>
+                <Text>Quotes : { bio }</Text>
+            </>
+        )
     }
 
     render() {
@@ -28,6 +59,9 @@ export default class Account extends Component {
                     <View style={{ alignItems: 'center' }}>
                         <Text style={{ fontWeight: 'bold', fontSize: 18}} >Soon :)</Text>
                         <Text>Take care to this.</Text>
+                        {
+                            this.state.data && <this.RenderData />
+                        }
                     </View>
                 </View>
             </View>

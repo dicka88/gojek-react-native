@@ -123,12 +123,11 @@ const HomeScreen = createStackNavigator({
 
 // switch ---------------------------------
 const SwitchScreen = createSwitchNavigator({
-    Pay: Pay,
     Splash: Splash,
     Auth: AuthScreen,
     Home: HomeScreen
 }, {
-    initialRouteName: "Pay"
+    initialRouteName: "Splash"
 })
 
 export default createAppContainer(SwitchScreen)
