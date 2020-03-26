@@ -74,7 +74,7 @@ export default class Home extends Component {
 				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={{flex: 1, paddingHorizontal: 15, paddingTop: 5}}>
 						{/*gopay*/}
-						<Gopay />
+						<Gopay props={this.props} />
 
 						{/*services*/}
 						<Services />

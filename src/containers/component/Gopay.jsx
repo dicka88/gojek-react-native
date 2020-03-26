@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, View, Text, StyleSheet } from 'react-native'
+import { Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const icon = {
     gopay: require('../../assets/icon/gopay.png'),
@@ -9,16 +9,16 @@ const icon = {
     more: require('../../assets/icon/more.png'),
 }
 
-const Item = ({ src, title }) => {
+const Item = ({ src, title, onPress }) => {
     return (
-        <View style={styles.item}>
+        <TouchableOpacity onPress={onPress} style={styles.item}>
             <Image source={src} />
             <Text style={{color: 'white', fontFamily: 'OpenSans-Regular'}}>{title}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 
-export default function Gopay() {
+export default function Gopay({props}) {
     return (
         <View>
             <View style={styles.header}>
@@ -26,10 +26,10 @@ export default function Gopay() {
                 <Text style={styles.money}>Rp23.706.600</Text>
             </View>
             <View style={styles.body}>
-                <Item src={icon.pay} title="Pay" />
-                <Item src={icon.nearby} title="Nearby" />
-                <Item src={icon.topup} title="Topup" />
-                <Item src={icon.more} title="More" />
+                <Item onPress={() => props.navigation.navigate('Pay')} src={icon.pay} title="Pay" />
+                <Item onPress={() => props.navigation.navigate('P')} src={icon.nearby} title="Nearby" />
+                <Item onPress={() => props.navigation.navigate('P')} src={icon.topup} title="Topup" />
+                <Item onPress={() => props.navigation.navigate('P')} src={icon.more} title="More" />
             </View>
         </View>
     )
