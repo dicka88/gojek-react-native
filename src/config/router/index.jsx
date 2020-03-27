@@ -18,7 +18,8 @@ import {
     Term,
     PrivacyPolicy,
     Promos,
-    Pay
+    Pay,
+    Topup
 } from '../../containers/pages'
 
 // Stack screen -------------------
@@ -111,7 +112,8 @@ const HomeScreen = createStackNavigator({
         }
     },
     Promos,
-    Pay
+    Pay,
+    Topup
 }, {
     initialRouteName: 'TabsScreen'
 })

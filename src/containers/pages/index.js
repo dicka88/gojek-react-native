@@ -6,11 +6,11 @@ import Signup from './Auth/Signup'
 import Term from './Auth/Term'
 import PrivacyPolicy from './Auth/PrivacyPolicy'
 
-
 // Home
 import Home from './Home/Home'
 import Promos from './Home/Promos'
 import Pay from './Home/Pay'
+import Topup from './Home/Topup'
 
 // Orders
 import Orders from './Orders/Orders'
@@ -36,5 +36,6 @@ export {
     Term,
     PrivacyPolicy,
     Promos,
-    Pay
+    Pay,
+    Topup
 }

@@ -27,9 +27,9 @@ export default function Gopay({props}) {
             </View>
             <View style={styles.body}>
                 <Item onPress={() => props.navigation.navigate('Pay')} src={icon.pay} title="Pay" />
-                <Item onPress={() => props.navigation.navigate('P')} src={icon.nearby} title="Nearby" />
-                <Item onPress={() => props.navigation.navigate('P')} src={icon.topup} title="Topup" />
-                <Item onPress={() => props.navigation.navigate('P')} src={icon.more} title="More" />
+                <Item onPress={() => props.navigation.navigate('Nearby')} src={icon.nearby} title="Nearby" />
+                <Item onPress={() => props.navigation.navigate('Topup')} src={icon.topup} title="Topup" />
+                <Item onPress={() => props.navigation.navigate('More')} src={icon.more} title="More" />
             </View>
         </View>
     )

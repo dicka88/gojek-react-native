@@ -39,7 +39,7 @@ export default class Account extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroudColor: 'black' }} >
+            <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <View style={{ 
                     height: 50, 
                     flexDirection: 'row', 

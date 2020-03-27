@@ -58,7 +58,9 @@ export default class Home extends Component {
 				subMenu: [
 					{
 						id: 1,
-						images: require('../../../assets/dummy/go-food-kfc.jpg')
+						images: require('../../../assets/dummy/go-food-kfc.jpg'),
+						title: 'Learn it to get away from it',
+						subTitle: 'All that you need to know about COVID-19 can be found here'
 					}
 				]
 			}

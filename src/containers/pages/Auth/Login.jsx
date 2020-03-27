@@ -20,7 +20,6 @@ export default class Login extends Component {
 
 	updateLang(props) {
 		this.setState({
-			...this.state,
 			lang: props
 		})
 	}
@@ -29,7 +28,6 @@ export default class Login extends Component {
 		const act = props ? true : false
 		const barColor = props ? 'rgba(52, 52, 52, 0.5)' : 'white'
 		this.setState({
-			...this.state,
 			barColor: barColor,
 			modal: {
 				visible: act

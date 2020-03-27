@@ -29,6 +29,7 @@
         "react-native": "0.61.5",
         "react-native-camera": "^3.21.0",
         "react-native-gesture-handler": "^1.6.0",
+        "react-native-masked-text": "^1.13.0",
         "react-native-permissions": "^2.0.10",
         "react-native-qrcode-generator": "^1.1.2",
         "react-native-qrcode-scanner": "^1.4.0",
