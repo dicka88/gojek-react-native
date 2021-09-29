@@ -129,10 +129,10 @@ android {
 
     defaultConfig {
         applicationId "com.gojek"
-        // minSdkVersion rootProject.ext.minSdkVersion
-        // targetSdkVersion rootProject.ext.targetSdkVersion
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        // minSdkVersion 19
+        // targetSdkVersion 27
         multiDexEnabled true
         versionCode 1
         versionName "1.0"
